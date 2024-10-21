@@ -12,3 +12,8 @@ Esta é uma API simples para gerenciar uma lista de livros.
     npm npm install
     npm start    
 5. A rota de get é a seguinte: GET http://localhost:3000/api/livros/all 
+6. A rota de Post é a seguinte: POST http://localhost:3000/api/livros
+
+## Fluxo de Trabalho utilizado
+
+1. Eu utilizei o fluxo de trabalho Github Flow, pois é um método prático para projetos pequenos ou em fase inicial (que não possuem uma grande demanda).
