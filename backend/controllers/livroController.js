@@ -14,6 +14,21 @@ const livroController = {
         }
     },
 
+    create: async(req, res) => {
+        try {
+            const livro = {
+                titulo: req.body.titulo,
+                isbn: req.body.isbn,
+                autor: req.body.autor
+            };
+            const response = await LivroModel.create(livro);
+            res.status(201).json({response, msg:"Livro cadastrado!"});
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ msg: "Erro ao cadastrar livro" });
+        }
+    },
+
 };
 
 module.exports = livroController;
