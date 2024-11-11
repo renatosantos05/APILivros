@@ -25,7 +25,7 @@ const livroController = {
             res.status(201).json({response, msg:"Livro cadastrado!"});
         } catch (error) {
             console.log(error);
-            res.status(500).json({ msg: "Erro ao cadastrar livro" });
+            res.status(400).json({ msg: "Erro ao cadastrar livro" });
         }
     },
 
