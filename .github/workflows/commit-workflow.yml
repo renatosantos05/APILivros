@@ -1,0 +1,40 @@
+name: Commit Workflow
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+        mongo:
+          image: mongo:latest
+          ports:
+            - 27017:27017
+          options: --health-cmd "exit 0" --health-interval 10s --health-timeout 5s --health-retries 3
+    
+    steps:
+      
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: instalar node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.16.0'  
+
+      
+      - name: instalar dependências
+        run: |
+            cd backend
+            npm install
+
+
+      
+      - name: Executar Testes
+        run: |
+            cd backend
+            npm test 
