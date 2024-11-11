@@ -1,9 +1,14 @@
-name: Commit Workflow
+name: Workflow
 
 on:
   push:
     branches:
       - 'feature/*'
+
+  pull_request:
+    branches:
+      - main
+  
 
 jobs:
   build-and-test:
