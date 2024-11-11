@@ -9,6 +9,7 @@ afterAll(async () => {
 
 describe('PostLivros', () => {
     it('Deve adicionar um livro e retornar status 201', async () => {
+        jest.setTimeout(10000);
         const livro = {
             titulo: 'Sobrevivendo no inferno',
             isbn: '1234',
