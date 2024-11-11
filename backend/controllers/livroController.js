@@ -24,7 +24,6 @@ const livroController = {
             const response = await LivroModel.create(livro);
             res.status(201).json({response, msg:"Livro cadastrado!"});
         } catch (error) {
-            console.log(error);
             res.status(400).json({ msg: "Erro ao cadastrar livro" });
         }
     },
