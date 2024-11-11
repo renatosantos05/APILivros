@@ -16,8 +16,8 @@ conn();
 const routes = require("./routes/router");
 app.use("/api",routes);
 
+const server = app.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
 
-const port = 3000;
-app.listen(port, function(){
-    console.log("Servidor ativo.");
-})
+module.exports = {app,server}

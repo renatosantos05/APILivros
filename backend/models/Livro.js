@@ -4,15 +4,15 @@ const{Schema} = mongoose;
 const livroSchema = new Schema({
     titulo:{
         type: String,
-        require: true,
+        required: true,
     },
     isbn: {
         type: String,
-        require: true,
+        required: true,
     },
     autor:{
         type: String,
-        require: true
+        required: true
     }
 }, 
 {timestamps: true}
