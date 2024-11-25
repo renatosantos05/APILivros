@@ -28,6 +28,20 @@ const livroController = {
         }
     },
 
+    delete: async(req, res) => {
+        try {
+            const id = req.params.id;
+            if (!mongoose.isValidObjectId(id)) {
+                return res.status(404).json({ msg: "ID inválido" });
+            }
+            let results = await LivroModel.deleteOne({_id: id});
+            res.status(204).send(results);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ msg: "Erro ao deletar livro" });
+        }
+    },
+
 };
 
 module.exports = livroController;
