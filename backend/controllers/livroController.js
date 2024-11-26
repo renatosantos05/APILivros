@@ -32,7 +32,7 @@ const livroController = {
         try {
             const id = req.params.id;
             if (!mongoose.isValidObjectId(id)) {
-                return res.status(404).json({ msg: "ID inválido" });
+                return res.status(404).json({ msg: "Livro não encontrado" });
             }
             let results = await LivroModel.deleteOne({_id: id});
             res.status(204).send(results);
