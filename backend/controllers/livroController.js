@@ -9,7 +9,6 @@ const livroController = {
             let results = await LivroModel.find({});
             res.status(200).send(results);
         } catch (error) {
-            console.log(error);
             res.status(500).json({ msg: "Erro ao obter livros" });
         }
     },
@@ -37,7 +36,6 @@ const livroController = {
             let results = await LivroModel.deleteOne({_id: id});
             res.status(204).send(results);
         } catch (error) {
-            console.log(error);
             res.status(500).json({ msg: "Erro ao deletar livro" });
         }
     },
