@@ -43,3 +43,16 @@ jobs:
         run: |
             cd backend
             npm test -- --coverage
+        continue-on-error: false
+      - name: Upload de Cobertura de Testes
+        if: success() 
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+            
+      - name: Verificar se a branch é de feature (para evitar merges diretos em main)
+        run: |
+          if [[ $GITHUB_REF == "refs/heads/main" ]]; then
+            echo "Commits diretos em main não são permitidos!"
+            exit 1
+          fi
