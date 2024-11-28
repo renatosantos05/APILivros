@@ -39,7 +39,7 @@ jobs:
 
 
       
-      - name: Executar Testes
+      - name: Executar Testes com cobertura
         run: |
             cd backend
-            npm test 
+            npm test -- --coverage
