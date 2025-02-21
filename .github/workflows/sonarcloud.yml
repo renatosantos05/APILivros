@@ -30,7 +30,8 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run:
+        run: /
+            cd backend
             npm install
 
       - name: Install SonarScanner
