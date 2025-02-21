@@ -30,12 +30,11 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: /
-            cd backend
-            npm install
+        run:
+            npx install
 
       - name: Install SonarScanner
-        run: npm install --save-dev sonar-scanner
+        run: npx install --save-dev sonar-scanner
 
       - name: Run SonarCloud Scanner
         run: |
