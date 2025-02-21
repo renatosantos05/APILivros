@@ -37,7 +37,7 @@ jobs:
       - name: Install SonarScanner
         run: |
           cd backend
-          npx install --save-dev sonar-scanner
+          npm install --save-dev sonar-scanner
 
       - name: Run SonarCloud Scanner
         run: |
