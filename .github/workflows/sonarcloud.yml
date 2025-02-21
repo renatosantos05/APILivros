@@ -31,7 +31,7 @@ jobs:
 
       - name: Install dependencies
         run:
-            npx install
+            npm install
 
       - name: Install SonarScanner
         run: npx install --save-dev sonar-scanner
