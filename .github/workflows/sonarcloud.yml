@@ -35,10 +35,13 @@ jobs:
             npm install
 
       - name: Install SonarScanner
-        run: npx install --save-dev sonar-scanner
+        run: |
+          cd backend
+          npx install --save-dev sonar-scanner
 
       - name: Run SonarCloud Scanner
         run: |
+          cd backend
           npx sonar-scanner \
             -Dsonar.organization=${{ secrets.SONAR_ORG }} \
             -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }} \
